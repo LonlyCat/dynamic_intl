@@ -3,7 +3,8 @@ import 'package:dynamic_intl/dynamic_intl.dart';
 class TestSetting extends LanguageSetting {
   @override
   Future<String> languageApi(String locale) async {
-    return 'https://jomin-web.web.app/language/intl_$locale.arb';
+    // return 'https://jomin-web.web.app/language/intl_$locale.arb';
+    return 'https://raw.githubusercontent.com/LonlyCat/dynamic_intl/master/online_l10n/intl_$locale.arb';
   }
 
   @override
