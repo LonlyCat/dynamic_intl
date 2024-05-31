@@ -14,7 +14,7 @@ void main() async {
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  static var locale = const Locale('zh');
+  static var locale = const Locale('en');
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -28,12 +28,12 @@ class _MyAppState extends State<MyApp> {
     // updateLanguageLibrary([const Locale('it'), const Locale('de')]);
 
     // 下载语言包，可以加版本, 无版本则每次都更新
-    LanguageUtil.instance
-        .checkAndDownload(MyApp.locale.languageCode, '1002')
-        .then((value) {
-      // 因为下载完成前会使用默认文案，下载完成后应刷新下UI
-      setState(() {});
-    });
+    // LanguageUtil.instance
+    //     .checkAndDownload(MyApp.locale.languageCode, '1002')
+    //     .then((value) {
+    //   // 因为下载完成前会使用默认文案，下载完成后应刷新下UI
+    //   setState(() {});
+    // });
 
     // 可以设置是否使用本地语言包
     // LanguageUtil.instance.setLocalLanguage(true);
@@ -94,6 +94,15 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  Future<void> _fetchOnlineLocale() async {
+    LanguageUtil.instance
+        .checkAndDownload(MyApp.locale.languageCode, '1003')
+        .then((value) {
+      // 因为下载完成前会使用默认文案，下载完成后应刷新下UI
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -103,18 +112,29 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             Text(
               S.of(context).test,
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _changeLocale,
-        tooltip: MyApp.locale.languageCode,
-        child: const Icon(Icons.all_inclusive),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          FloatingActionButton(
+            onPressed: _fetchOnlineLocale,
+            tooltip: MyApp.locale.languageCode,
+            child: const Icon(Icons.link_rounded),
+          ),
+          const SizedBox(height: 30),
+          FloatingActionButton(
+            onPressed: _changeLocale,
+            tooltip: MyApp.locale.languageCode,
+            child: const Icon(Icons.change_circle_rounded),
+          )
+        ],
+      ),
     );
   }
 }
