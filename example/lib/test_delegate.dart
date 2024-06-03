@@ -1,5 +1,5 @@
+import 'package:dynamic_online_intl/language/generated/l10n.dart';
 import 'package:dynamic_intl/dynamic_intl.dart';
-import 'package:example/language/generated/l10n.dart';
 
 class AppLocalizationDynamicDelegate
     extends BaseLocalizationsDynamicDelegate<S> {
