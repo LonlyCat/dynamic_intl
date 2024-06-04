@@ -4,7 +4,7 @@ class TestSetting extends LanguageSetting {
   @override
   Future<String> languageApi(String locale) async {
     // return 'https://jomin-web.web.app/language/intl_$locale.arb';
-    return 'https://raw.githubusercontent.com/LonlyCat/dynamic_intl/master/dynamic_online_intl/lib/language/l10n/intl_$locale.arb';
+    return 'http://127.0.0.1:8080/l10ns/raw/intl_$locale.arb';
   }
 
   @override
