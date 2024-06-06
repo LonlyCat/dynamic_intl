@@ -195,9 +195,11 @@ packages:
   dynamic_online_intl:
     dependency: "direct main"
     description:
-      path: "../dynamic_online_intl"
-      relative: true
-    source: path
+      path: dynamic_online_intl
+      ref: HEAD
+      resolved-ref: fa46b893b37632c44c870cc0bcdf0cc10551b088
+      url: "https://github.com/LonlyCat/intl_source.git"
+    source: git
     version: "0.0.1"
   equatable:
     dependency: transitive
