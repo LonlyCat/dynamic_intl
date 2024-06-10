@@ -1,9 +1,9 @@
-import 'package:dynamic_intl/dynamic_intl.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:dynamic_online_intl/language/generated/l10n.dart';
+import 'package:dynamic_intl/dynamic_intl.dart';
 import 'package:example/test_delegate.dart';
 import 'package:example/test_setting.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

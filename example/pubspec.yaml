@@ -39,6 +39,7 @@ dependencies:
   dynamic_online_intl:
     git:
       url: https://github.com/LonlyCat/intl_source.git
+      ref: dev
       path: dynamic_online_intl
 
   # The following adds the Cupertino Icons font to your application.
